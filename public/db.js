@@ -5,7 +5,7 @@ let budgetVersion;
 const request = indexedDB.open('BudgetDB', budgetVersion || 21);
 
 request.onupgradeneeded = function (e) {
-  console.log('Upgrade needed in IndexDB');
+  console.log('Upgrade is needed for IndexDB');
 
   const { oldVersion } = e;
   const newVersion = e.newVersion || db.version;
@@ -72,7 +72,7 @@ request.onsuccess = function (e) {
 
   // Check if app is online before reading from db
   if (navigator.onLine) {
-    console.log('Backend online! 🗄️');
+    console.log('Backend is now online! 🗄️');
     checkDatabase();
   }
 };
